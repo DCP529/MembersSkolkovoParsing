@@ -10,18 +10,18 @@ using (var client = new HttpClient())
 {
     var root = new Root();
 
-    root.key = "707c4beebeed60264ba0684c01dd334a";
-    root.sort = "-member_since";
-    root.page = 1;
-    root.filters = new Filters() { tagsType = "or" };
-    root.limit = 48;
+    root.Key = "707c4beebeed60264ba0684c01dd334a";
+    root.Sort = "-member_since";
+    root.Page = 1;
+    root.Filters = new Filters() { TagsType = "or" };
+    root.Limit = 48;
 
     string? json;
     StringContent? data;
 
     for (int i = 0; i < length; i++)
     {
-        root.page = 1;
+        root.Page = 1;
 
         json = Newtonsoft.Json.JsonConvert.SerializeObject(root);
         data = new StringContent(json, Encoding.UTF8, "application/json");
