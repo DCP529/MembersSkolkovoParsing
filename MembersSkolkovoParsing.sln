@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembersSkolkovoParsing", "MembersSkolkovoParsing\MembersSkolkovoParsing.csproj", "{E1936980-1C3A-401D-9787-35E41666880D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{6003BFD7-6E6F-48FB-98FC-43EC01F0CA59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1936980-1C3A-401D-9787-35E41666880D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1936980-1C3A-401D-9787-35E41666880D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1936980-1C3A-401D-9787-35E41666880D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1936980-1C3A-401D-9787-35E41666880D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6003BFD7-6E6F-48FB-98FC-43EC01F0CA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6003BFD7-6E6F-48FB-98FC-43EC01F0CA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6003BFD7-6E6F-48FB-98FC-43EC01F0CA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6003BFD7-6E6F-48FB-98FC-43EC01F0CA59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC6F3FBA-B50F-4AA6-88A0-03DBB0BDFD49}
+	EndGlobalSection
+EndGlobal
