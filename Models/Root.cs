@@ -8,10 +8,10 @@ namespace MembersSkolkovoParsing
 {
     public class Root
     {
-        public string key { get; set; }
-        public string sort { get; set; }
-        public int page { get; set; }
-        public Filters filters { get; set; }
-        public int limit { get; set; }
+        public string Key { get; set; }
+        public string Sort { get; set; }
+        public int Page { get; set; }
+        public Filters Filters { get; set; }
+        public int Limit { get; set; }
     }
 }

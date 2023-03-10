@@ -13,7 +13,7 @@ using (var client = new HttpClient())
     root.key = "707c4beebeed60264ba0684c01dd334a";
     root.sort = "-member_since";
     root.page = 1;
-    root.filters = new Filters() { tags_type = "or" };
+    root.filters = new Filters() { tagsType = "or" };
     root.limit = 48;
 
     string? json;

@@ -8,7 +8,7 @@ namespace MembersSkolkovoParsing
 {
     public class Filters
     {
-        public string tags_type { get; set; }
+        public string TagsType { get; set; }
 
     }
 }
