@@ -1,5 +1,4 @@
 ﻿using AngleSharp.Html.Parser;
-using AutoMapper;
 using MembersSkolkovoParsing;
 using Models;
 using Models.ModelsDb;
@@ -13,34 +12,6 @@ var urlMembers = "https://navigator.sk.ru/navigator/api/search/only_companies/";
 RootResponse resultContent = new();
 List<CompanyDTO> companies = new();
 Random rnd = new();
-
-var configuration = new MapperConfiguration(cfg =>
-{
-    cfg.CreateMap<CompanyDTO, Company>().ReverseMap()
-    .ForMember(x => x.id, f => rnd.Next())
-    .ForMember(x => x.status_del_date, x => x = null)
-    .ForMember(x => x.stage, x => x = null)
-    .ForMember(x => x.business_model, x => x = null)
-    .ForMember(x => x.investment_size, x => x = null)
-    .ForMember(x => x.staff_number, x => x = null)
-    .ForMember(x => x.staff_number_val, x => x = null)
-    .ForMember(x => x.interests, x => x = null)
-    .ForMember(x => x.international_revenue, x => x = null)
-    .ForMember(x => x.investment_round, x => x = null)
-    .ForMember(x => x.approved_patents_count, x => x = null)
-    .ForMember(x => x.grants_values_amount_per_fund, x => x = null)
-    .ForMember(x => x.similar_companies, x => x = null)
-    .ForMember(x => x.cities_of_presence, x => x = null)
-    .ForMember(x => x.know_how_counts, x => x = null)
-    .ForMember(x => x.tags, x => x = null)
-    .ForMember(x => x.rank, x => x = null)
-    .ForMember(x => x.investment_funds, f => f = null);
-
-    cfg.CreateMap<Company, CompanyDTO>()
-    .ForMember(x => x.id, f => Guid.NewGuid());
-});
-
-var mapper = new Mapper(configuration);
 
 double count = 0;
 
@@ -83,20 +54,30 @@ using (var client = new HttpClient())
     }
 }
 
+var dbContext = new EngineeringAndPrototypingCentersDbContext();
+var list = new List<Company>();
+
 companies.ForEach(x =>
 {
-    x.id = rnd.Next();
-    x.investment_funds?.ForEach(x => x.id = rnd.Next());
-    x.tech_parks?.ForEach(x => x.id = rnd.Next());
-    x.key_indicators?.ForEach(x => x.id = rnd.Next());
-    x.okveds?.ForEach(x => x.id = rnd.Next());
-    x.projects?.ForEach(x => x.id = rnd.Next());
+    if (dbContext.Companies.Any(z => z.id == x.id))
+    {
+        list.Add(new Company()
+        {
+            id = x.id,
+            name = x.name,
+            full_name = x.full_name,
+            foundation_year = x.foundation_year,
+            founders = x.founders,
+            description = x.description,
+            short_description = x.short_description,
+            revenue = x.revenue,
+            average_number_of_employees = x.average_number_of_employees,
+            company_type = x.company_type,
+            okveds = x.okveds,
+            projects = x.projects
+        });
+    }
 });
 
-var dbContext = new EngineeringAndPrototypingCentersDbContext();
-
-dbContext.Companies.AddRange(mapper.Map<List<Company>>(companies));
+dbContext.Companies.AddRange(list);
 dbContext.SaveChanges();
-
-Console.ReadLine();
-

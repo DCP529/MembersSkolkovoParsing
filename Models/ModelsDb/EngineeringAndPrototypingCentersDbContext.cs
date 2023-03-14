@@ -15,13 +15,10 @@ namespace Models.ModelsDb
         public DbSet<Company> Companies { get; set; }
         public DbSet<Description> Descriptions { get; set; }
         public DbSet<FullName> FullNames { get; set; }
-        public DbSet<InvestmentFund> InvestmentFunds { get; set; }
-        public DbSet<KeyIndicator> KeyIndicators { get; set; }
         public DbSet<Name> Names { get; set; }
         public DbSet<Okved> Okveds { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ShortDescription> ShortDescriptions { get; set; }
-        public DbSet<TechPark> TechParks { get; set; }
 
 
         public EngineeringAndPrototypingCentersDbContext()
