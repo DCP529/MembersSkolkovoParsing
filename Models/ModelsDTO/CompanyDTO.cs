@@ -42,15 +42,15 @@ namespace Models.ModelsDTO
         public object? investment_round { get; set; }
         public object? approved_patents_count { get; set; }
         public bool? has_plan { get; set; }
-        public List<KeyIndicator>? key_indicators { get; set; }
+        public List<KeyIndicatorDTO>? key_indicators { get; set; }
         public int? cluster { get; set; }
         public string? company_type { get; set; }
         public string? logo { get; set; }
         public double? authorized_capital { get; set; }
         public string? organisation_status { get; set; }
         public List<string>? founders { get; set; }
-        public List<InvestmentFund>? investment_funds { get; set; }
-        public List<TechPark>? tech_parks { get; set; }
+        public List<InvestmentFundDTO>? investment_funds { get; set; }
+        public List<TechParkDTO>? tech_parks { get; set; }
         public List<object>? grants_values_amount_per_fund { get; set; }
         public bool? has_large_contracts { get; set; }
         public bool? international_markets { get; set; }
